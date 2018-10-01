@@ -17,7 +17,7 @@ class Snatch3rRobot(object):
     def __init__(self):
         pass
     def go(self):
-        pas
+        pass
     def stop(self):
         pass
 
