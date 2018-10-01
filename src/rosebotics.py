@@ -19,8 +19,8 @@ class Snatch3rRobot(object):
         self.right_wheel = Wheel(right_wheel_port)
 
     def go(self,left_duty_cycle_percent,right_duty_cycle_percent):
-        self.left_motor.start_spinning(left_duty_cycle_percent)
-        self.right_motor.start_spinning(right_duty_cycle_percent)
+        self.left_wheel.start_spinning(left_duty_cycle_percent)
+        self.right_wheel.start_spinning(right_duty_cycle_percent)
 
     def stop(self):
         pass
