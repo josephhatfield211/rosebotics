@@ -3,6 +3,7 @@
   Team members:  PUT_YOUR_NAMES_HERE.
   Fall term, 2018-2019.
 """
+import time
 
 from ev3dev import ev3
 from enum import Enum
@@ -25,6 +26,16 @@ class Snatch3rRobot(object):
     def stop(self, stop_action=StopAction.BRAKE.value):
         self.left_wheel.stop_spinning(stop_action)
         self.right_wheel.stop_spinning(stop_action)
+
+    def forward(self, sec):
+        timeinit = time.time()
+        while True:
+            self.left_wheel.start_spinning(1)
+            self.right_wheel.start_spinning(1)
+            if time.time()- timeinit >= sec:
+                break
+        self.left_wheel.stop_spinning(stop_action=StopAction.BRAKE.value)
+        self.left_wheel.stop_spinning(stop_action=StopAction.BRAKE.value)
 
 
 class Wheel(object):
