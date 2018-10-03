@@ -30,12 +30,12 @@ class Snatch3rRobot(object):
     def forward(self, sec):
         timeinit = time.time()
         while True:
-            self.left_wheel.start_spinning(1)
-            self.right_wheel.start_spinning(1)
+            self.left_wheel.start_spinning(100)
+            self.right_wheel.start_spinning(100)
             if time.time()- timeinit >= sec:
                 break
         self.left_wheel.stop_spinning(stop_action=StopAction.BRAKE.value)
-        self.left_wheel.stop_spinning(stop_action=StopAction.BRAKE.value)
+        self.right_wheel.stop_spinning(stop_action=StopAction.BRAKE.value)
 
 
 class Wheel(object):
