@@ -41,7 +41,8 @@ def run_test_go_stop():
 
 def run_test_spin():
     rob = rb.Snatch3rRobot()
-    rob.forward(69)
+    rob.forward(4)
+    rob.turn(69)
 
 
 main()
